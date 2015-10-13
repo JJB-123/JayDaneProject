@@ -21,7 +21,7 @@ public class JayDaneProject {
         
         // Build a JFrame for data input
         JFrame Name_Getter_Frame = new JFrame("RandomRPG");
-        Name_Getter_Frame.setSize(350, 350);
+        Name_Getter_Frame.setSize(300, 300);
         
         // Closing the JFrame ends the Application
         Name_Getter_Frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -51,12 +51,12 @@ public class JayDaneProject {
 
         // Name input
         final JTextField  inputName = new JTextField(20);
-        inputName.setBounds(120, 40, 160, 25);
+        inputName.setBounds(10, 40, 160, 25);
         _workspace.add(inputName);        
               
         // Submit button - Triggers the game
         JButton submitBtn = new JButton("Submit");
-        submitBtn.setBounds(120, 70, 80, 25);
+        submitBtn.setBounds(10, 70, 80, 25);
         _workspace.add(submitBtn); 
         submitBtn.addActionListener(new ActionListener() {
  
@@ -66,7 +66,7 @@ public class JayDaneProject {
                 // Use the player name to generate a Random seed
                 LetterCounter SeedGetter = new LetterCounter();
                 int[] randomSeed = SeedGetter.AlphaCount(inputName.getText().toString());
-                
+                SeedGetter.PrintArrayValues(randomSeed);
             }
         });      
       
