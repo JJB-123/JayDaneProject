@@ -39,7 +39,7 @@ public class JayDaneProject {
     }
 
     // Function that Sets the fields
-    public static void setFields(JPanel _workspace){
+    public static void setFields(final JPanel _workspace){
         
         
         _workspace.setLayout(null);
@@ -65,10 +65,33 @@ public class JayDaneProject {
                 // TODO : Start the game
                 // Use the player name to generate a Random seed
                 LetterCounter SeedGetter = new LetterCounter();
-                int[] randomSeed = SeedGetter.AlphaCount(inputName.getText().toString());
+                int[] randomSeed = SeedGetter.AlphaCount(inputName.getText());
+                                   
+                // DEBUG lines - print's counts out
                 SeedGetter.PrintArrayValues(randomSeed);
+                String seed = null;
+                
+                GameBoard StartGame = new GameBoard(seed, inputName.getText());
+                RunGame(StartGame);
+                _workspace.setEnabled(false);
+                _workspace.setVisible(false);
             }
+
         });      
       
     }
+    
+    /**
+    * This is the main method to run the game.
+    * It takes a singe param of the GameBoard class
+    * <p>
+    * 
+    * @param  GameBoard GameBoard class of attributes
+    * @return n/a
+    * @see    n/a
+    */
+    private static void RunGame(GameBoard StartGame) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+    
 }

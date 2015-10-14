@@ -9,7 +9,7 @@ package jaydaneproject;
  */
 public class LetterCounter {
     
-    public static void main(String[] args) {
+    public void main(String[] args) {
         
         // String contains every letter at least once
         String TestString  = "I picked my nose and then I flicked it across the bed and it hit Jason";
@@ -69,7 +69,7 @@ public class LetterCounter {
     * @see         n/a
     */
     
-    public static int[] AlphaCount(String StringToCount) {
+    public int[] AlphaCount(String StringToCount) {
         // Capture totals
         int[] countTotal = new int[27];
         
