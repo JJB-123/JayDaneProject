@@ -71,10 +71,25 @@ public class JayDaneProject {
                 SeedGetter.PrintArrayValues(randomSeed);
                 String seed = null;
                 
-                GameBoard StartGame = new GameBoard(seed, inputName.getText());
-                RunGame(StartGame);
-                _workspace.setEnabled(false);
-                _workspace.setVisible(false);
+                GameBoard StartGame = new GameBoard(seed, inputName.getText(), randomSeed);
+                
+                // Generate the Hero/Player Seed Token 
+                GeneratePlayerToken PlayerTokenSeed = new GeneratePlayerToken();
+                // Name Player Token
+                PlayerTokenSeed.SetPlayerNameToken(inputName.getText());                
+                // Generate the Gender Token
+                PlayerTokenSeed.GeneratePlayerTokenGender(StartGame.SEEDVALUES);
+                // Generate the HP Token
+                PlayerTokenSeed.GeneratePlayerTokenHP(StartGame.SEEDVALUES);
+                // Generate the MP Token
+                PlayerTokenSeed.GeneratePlayerTokenMP(StartGame.SEEDVALUES);
+                      
+                // TODO - Remove DEBUG Printout
+                PlayerTokenSeed.PrintPlayerTokenPairs();
+                
+               // RunGame(StartGame);
+               // _workspace.setEnabled(false);
+               // _workspace.setVisible(false);
             }
 
         });      
@@ -90,8 +105,10 @@ public class JayDaneProject {
     * @return n/a
     * @see    n/a
     */
-    private static void RunGame(GameBoard StartGame) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    private static void RunGame(GameBoard RunningGame) {
+        
+        
+        
     }
     
 }
